@@ -1,0 +1,14 @@
+main {
+	display: table-row-group;
+}
+
+main > .container {
+	display: table-row;
+}
+
+.main__inner {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 1.5em;
+	text-align: center;
+}
