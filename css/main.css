@@ -203,6 +203,7 @@ ol {
 
 .card {
   display: inline-table;
+  width: 100%;
   max-width: 21.875em;
   padding: 1.5em;
   margin: 2.5em 0;
@@ -269,6 +270,8 @@ ol {
 }
 
 .card__image-box img {
+  width: 100%;
+  height: auto;
   -webkit-border-radius: inherit;
   -moz-border-radius: inherit;
   border-radius: inherit;
