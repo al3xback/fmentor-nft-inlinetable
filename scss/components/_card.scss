@@ -10,17 +10,18 @@
 	margin: func.em(30) 0 func.em(18);
 	border-radius: 15px;
 	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+	text-align: left;
 }
 
 .card__inner {
 	display: table-row-group;
 }
 
-.card__image {
+.card__inner > * {
 	display: table-row;
 }
 
-.card__image-box {
+.card__image-inner {
 	position: relative;
 	z-index: 1;
 	display: table-cell;
@@ -29,20 +30,20 @@
 	cursor: pointer;
 }
 
-.card__image-box::before,
-.card__image-box::after {
+.card__image-inner::before,
+.card__image-inner::after {
 	content: '';
 	position: absolute;
 	inset: 0 0 func.em(24);
 	border-radius: inherit;
 }
 
-.card__image-box::before {
+.card__image-inner::before {
 	background-color: var.$color-soft-blue;
 	z-index: -1;
 }
 
-.card__image-box::after {
+.card__image-inner::after {
 	background-color: var.$color-cyan-light;
 	background-image: url('../images/icons/view.svg');
 	background-repeat: no-repeat;
@@ -51,21 +52,17 @@
 	transition: opacity 0.3s;
 }
 
-.card__image-box:hover::after {
+.card__image-inner:hover::after {
 	opacity: 1;
 }
 
-.card__image-box img {
+.card__image-inner img {
 	width: 100%;
 	height: auto;
 	border-radius: inherit;
 }
 
-.card__content {
-	display: table-row;
-}
-
-.card__content-box {
+.card__content-inner {
 	display: table-cell;
 }
 
@@ -82,10 +79,6 @@
 	width: 100%;
 }
 
-.card__stats .cell {
-	vertical-align: middle;
-}
-
 .card__stats-item {
 	width: 50%;
 	font-size: func.em(15);
@@ -100,6 +93,10 @@
 	text-align: right;
 }
 
+.card__stats-item .table-cell {
+	vertical-align: middle;
+}
+
 .card__stats-item i {
 	position: relative;
 	top: func.em(2);
@@ -112,7 +109,7 @@
 	border-top: 1px solid var.$color-dark-blue-3;
 }
 
-.card__author .cell {
+.card__author .table-cell {
 	vertical-align: middle;
 }
 
@@ -132,6 +129,10 @@
 	font-size: func.em(15);
 }
 
+.card__author-desc .btn--link {
+	display: inline;
+}
+
 @media (min-width: 48em) {
 	.card__title {
 		margin-bottom: func.em(16, 22);
@@ -148,9 +149,5 @@
 
 	.card__author-desc {
 		font-size: func.em(16);
-	}
-
-	.card__author {
-		margin-top: func.em(24);
 	}
 }
